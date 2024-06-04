@@ -16,13 +16,19 @@ const recipeData = await readFile(recipePath, "utf8");
 let templateHTML = await readFile(templatePath, "utf8");
 
 const recipe = JSON.parse(recipeData);
+templateHTML = templateHTML.replace(
+  "<h1>Recette de cannelés</h1>",
+  '<h1 class="title">Recette de cannelés</h1>'
+);
+
 const generateHTML = (recipe) => {
   // Ingredients list
-  let ingredientsHTML = "<h2>Ingrédients</h2><ul>";
+  let ingredientsHTML =
+    '<h2 class="subtitle">Ingrédients</h2><ul class="list unordered-list">';
   recipe.ingredients.forEach((ingredient) => {
     ingredientsHTML += `
-      <li>
-        <img src="./pictures/${ingredient.picture}" alt="${ingredient.name}" />
+      <li class="list-item">
+        <img src="./pictures/${ingredient.picture}" alt="${ingredient.name}" class="img" />
         ${ingredient.translated_name[0].fr}: ${ingredient.quantity} ${ingredient.unit}
       </li>`;
   });
@@ -31,19 +37,20 @@ const generateHTML = (recipe) => {
   // Timing information
   const timing = recipe.timing;
   const timingHTML = `
-    <h2>Temps</h2>
-    <ul>
-      <li>Total: ${timing.total.quantity} ${timing.total.unit}</li>
-      <li>Préparation: ${timing.preparation.quantity} ${timing.preparation.unit}</li>
-      <li>Repos: ${timing.rest.quantity} ${timing.rest.unit}</li>
-      <li>Cuisson: ${timing.cooking.quantity} ${timing.cooking.unit}</li>
+    <h2 class="subtitle">Temps</h2>
+    <ul class="list unordered-list">
+      <li class="list-item">Total: ${timing.total.quantity} ${timing.total.unit}</li>
+      <li class="list-item">Préparation: ${timing.preparation.quantity} ${timing.preparation.unit}</li>
+      <li class="list-item">Repos: ${timing.rest.quantity} ${timing.rest.unit}</li>
+      <li class="list-item">Cuisson: ${timing.cooking.quantity} ${timing.cooking.unit}</li>
     </ul>
   `;
 
   // Preparation steps
-  let stepsHTML = "<h2>Étapes</h2><ol>";
+  let stepsHTML =
+    '<h2 class="subtitle">Étapes</h2><ol class="list ordered-list">';
   recipe.steps.forEach((step) => {
-    stepsHTML += `<li>${step.description}</li>`;
+    stepsHTML += `<li class="list-item">${step.description}</li>`;
   });
   stepsHTML += "</ol>";
 
