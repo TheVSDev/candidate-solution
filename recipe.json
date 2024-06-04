@@ -1,0 +1,116 @@
+{
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "sugar",
+      "translated_name": [{ "fr": "Sucre en poudre" }],
+      "quantity": "200",
+      "unit": "grams",
+      "picture": "1-sugar.webp"
+    },
+    {
+      "id": 2,
+      "name": "milk",
+      "translated_name": [{ "fr": "Lait" }],
+      "quantity": "50",
+      "unit": "cl",
+      "picture": "2-milk.webp"
+    },
+    {
+      "id": 3,
+      "name": "flour",
+      "translated_name": [{ "fr": "Farine" }],
+      "quantity": "100",
+      "unit": "grams",
+      "picture": "3-flour.webp"
+    },
+    {
+      "id": 4,
+      "name": "vanilla",
+      "translated_name": [{ "fr": "Gousse de vanille" }],
+      "quantity": "1/2",
+      "unit": "gousse",
+      "picture": "4-vanilla.webp"
+    },
+    {
+      "id": 5,
+      "name": "rhum",
+      "translated_name": [{ "fr": "Rhum" }],
+      "quantity": "3",
+      "unit": "spoons",
+      "picture": "5-rhum.webp"
+    },
+    {
+      "id": 6,
+      "name": "egg-yolk",
+      "translated_name": [{ "fr": "Jaune d'oeuf" }],
+      "quantity": "2",
+      "unit": "units",
+      "picture": "6-egg-yolk.webp"
+    },
+    {
+      "id": 7,
+      "name": "butter",
+      "translated_name": [{ "fr": "Beurre" }],
+      "quantity": "25",
+      "unit": "grams",
+      "picture": "7-butter.webp"
+    },
+    {
+      "id": 8,
+      "name": "egg",
+      "translated_name": [{ "fr": "Oeufs entiers" }],
+      "quantity": "2",
+      "unit": "units",
+      "picture": "8-egg.webp"
+    }
+  ],
+  "timing": {
+    "total": { "quantity": "70", "unit": "minutes" },
+    "preparation": { "quantity": "10", "unit": "minutes" },
+    "rest": { "quantity": "1440", "unit": "minutes" },
+    "cooking": { "quantity": "60", "unit": "minutes" }
+  },
+  "steps": [
+    {
+      "order": 1,
+      "ingredients": [2, 4, 7],
+      "description": "La veille : faire bouillir le lait avec la vanille et le beurre. "
+    },
+    {
+      "order": 2,
+      "ingredients": [1, 2, 3, 6, 8],
+      "description": "Pendant ce temps, mélanger la farine, le sucre puis incorporer les oeufs d'un seul coup, verser ensuite le lait bouillant."
+    },
+    {
+      "order": 3,
+      "ingredients": [5],
+      "description": "Mélanger doucement afin d'obtenir une pâte fluide comme une pâte à crêpes, laisser refroidir, puis ajouter le rhum."
+    },
+    {
+      "order": 4,
+      "ingredients": [],
+      "description": "Placer au réfrigérateur 24 heures au minimum, 48 heures au maximum. "
+    },
+    {
+      "order": 5,
+      "ingredients": [],
+      "description": "Le jour J : sortir la pâte du frigo au moins une heure avant la cuisson."
+    },
+    {
+      "order": 6,
+      "ingredients": [],
+      "description": "Préchauffer le four à thermostat 9 (270°C)."
+    },
+    {
+      "order": 7,
+      "ingredients": [],
+      "description": "Verser la pâte dans les moules, en ne les remplissant qu'aux 3/4: poser les moules sur une tôle, et cuire à th. 9 pendant 5 minutes, puis baisser le thermostat à 6 (180°C) et continuer la cuisson pendant 1 heure (au moins, cela dépend de votre four, chez moi ça prend 1h20!): le cannelé doit avoir une croûte brune et un intérieur bien moelleux. "
+    },
+    {
+      "order": 8,
+      "ingredients": [],
+      "description": "Démouler encore chaud."
+    }
+  ]
+}
