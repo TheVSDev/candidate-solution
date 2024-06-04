@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Solution to recrutment test created by Sigilium",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
