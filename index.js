@@ -47,12 +47,15 @@ const generateHTML = (recipe) => {
   `;
 
   // Preparation steps
-  let stepsHTML =
-    '<h2 class="subtitle">Étapes</h2><ol class="list ordered-list">';
+  let stepsHTML = `
+    <h2 class="subtitle">Étapes</h2>
+    <ol class="list ordered-list">`;
   recipe.steps.forEach((step) => {
-    stepsHTML += `<li class="list-item">${step.description}</li>`;
+    stepsHTML += `
+      <li class="list-item">${step.description}</li>`;
   });
-  stepsHTML += "</ol>";
+  stepsHTML += `
+    </ol>`;
 
   return `
     ${ingredientsHTML}
