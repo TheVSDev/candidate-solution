@@ -17,6 +17,11 @@ let templateHTML = await readFile(templatePath, "utf8");
 
 const recipe = JSON.parse(recipeData);
 templateHTML = templateHTML.replace(
+  "</head>",
+  `  <link rel="stylesheet" href="./src/style/style.css" />
+  </head>`
+);
+templateHTML = templateHTML.replace(
   "<h1>Recette de cannelés</h1>",
   '<h1 class="title">Recette de cannelés</h1>'
 );
