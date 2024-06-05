@@ -23,44 +23,55 @@ templateHTML = templateHTML.replace(
 );
 templateHTML = templateHTML.replace(
   "<h1>Recette de cannelés</h1>",
-  '<h1 class="title">Recette de cannelés</h1>'
+  `
+      <div class="title">
+        <h1>Recette de cannelés</h1>
+      </div>`
 );
 
 const generateHTML = (recipe) => {
   // Ingredients list
-  let ingredientsHTML =
-    '<h2 class="subtitle">Ingrédients</h2><ul class="list unordered-list">';
+  let ingredientsHTML = ` 
+      <div class="subtitle">
+        <h2>Ingrédients</h2>
+      </div>
+      <ul class="list unordered-list">`;
   recipe.ingredients.forEach((ingredient) => {
     ingredientsHTML += `
-      <li class="list-item">
-        <img src="./pictures/${ingredient.picture}" alt="${ingredient.name}" class="img" />
-        ${ingredient.translated_name[0].fr}: ${ingredient.quantity} ${ingredient.unit}
-      </li>`;
+        <li class="list-item">
+          <img src="./pictures/${ingredient.picture}" alt="${ingredient.name}" class="img" />
+          ${ingredient.translated_name[0].fr}: ${ingredient.quantity} ${ingredient.unit}
+        </li>`;
   });
-  ingredientsHTML += "</ul>";
+  ingredientsHTML += `
+      </ul>`;
 
   // Timing information
   const timing = recipe.timing;
   const timingHTML = `
-    <h2 class="subtitle">Temps</h2>
-    <ul class="list unordered-list">
-      <li class="list-item">Total: ${timing.total.quantity} ${timing.total.unit}</li>
-      <li class="list-item">Préparation: ${timing.preparation.quantity} ${timing.preparation.unit}</li>
-      <li class="list-item">Repos: ${timing.rest.quantity} ${timing.rest.unit}</li>
-      <li class="list-item">Cuisson: ${timing.cooking.quantity} ${timing.cooking.unit}</li>
-    </ul>
+      <div class="subtitle">
+        <h2>Temps</h2>
+      </div>
+      <ul class="list unordered-list">
+        <li class="list-item">Total: ${timing.total.quantity} ${timing.total.unit}</li>
+        <li class="list-item">Préparation: ${timing.preparation.quantity} ${timing.preparation.unit}</li>
+        <li class="list-item">Repos: ${timing.rest.quantity} ${timing.rest.unit}</li>
+        <li class="list-item">Cuisson: ${timing.cooking.quantity} ${timing.cooking.unit}</li>
+      </ul>
   `;
 
   // Preparation steps
   let stepsHTML = `
-    <h2 class="subtitle">Étapes</h2>
-    <ol class="list ordered-list">`;
+      <div class="subtitle">
+        <h2>Étapes</h2>
+      </div>
+      <ol class="list ordered-list">`;
   recipe.steps.forEach((step) => {
     stepsHTML += `
-      <li class="list-item">${step.description}</li>`;
+        <li class="list-item">${step.description}</li>`;
   });
   stepsHTML += `
-    </ol>`;
+      </ol>`;
 
   return `
     ${ingredientsHTML}
