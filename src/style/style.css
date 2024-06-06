@@ -27,8 +27,8 @@ body {
 .title:before {
   content: " ";
   display: block;
-  border-bottom: 1px solid #c50000;
-  border-top: 1px solid #c50000;
+  border-bottom: 1px solid #ff7f50;
+  border-top: 1px solid #ff7f50;
   height: 15px;
   background-color: #f8f8f8;
 }
@@ -41,6 +41,7 @@ body {
   padding-bottom: 15px;
   position: relative;
   margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .subtitle:before {
@@ -62,4 +63,119 @@ body {
   width: 95%;
   max-width: 255px;
   background-color: #333;
+}
+
+/* --- Ingredients */
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.ingredient {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  flex: 1 1 calc(25% - 40px);
+  cursor: pointer;
+}
+
+.ingredient img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.img {
+  margin-bottom: 10px;
+}
+
+/* --- Timing */
+
+.list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  width: 50%;
+}
+
+.list-item:hover {
+  cursor: pointer;
+  width: 60%;
+  color: white;
+  background-color: #4d4d4d;
+  border-radius: 17px;
+  transition: 0.5s;
+}
+
+/* --- Steps */
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+  border-left: 5px solid #ff7f50;
+  border-radius: 4px;
+}
+
+.step-title {
+  font-size: 1.2em;
+  color: #ff7f50;
+  margin-bottom: 5px;
+}
+
+.step-description {
+  margin-left: 10px;
+}
+
+/* --- Responsivness */
+
+@media (max-width: 768px) {
+  .ingredient {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .list-item,
+  .timing .list-item {
+    width: 100%;
+  }
+
+  .list-item:hover {
+    width: 100%;
+  }
+
+  .subtitle {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
 }

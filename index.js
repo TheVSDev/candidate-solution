@@ -35,16 +35,17 @@ const generateHTML = (recipe) => {
       <div class="subtitle">
         <h2>Ingrédients</h2>
       </div>
-      <ul class="list unordered-list">`;
+      <div class="ingredients">`;
   recipe.ingredients.forEach((ingredient) => {
     ingredientsHTML += `
-        <li class="list-item">
+        <div class="ingredient">
           <img src="./pictures/${ingredient.picture}" alt="${ingredient.name}" class="img" />
-          ${ingredient.translated_name[0].fr}: ${ingredient.quantity} ${ingredient.unit}
-        </li>`;
+          <br />
+          <span class="ingredient-details"><strong>${ingredient.translated_name[0].fr}</strong>: ${ingredient.quantity} ${ingredient.unit}</span>
+        </div>`;
   });
   ingredientsHTML += `
-      </ul>`;
+      </div>`;
 
   // Timing information
   const timing = recipe.timing;
@@ -52,7 +53,7 @@ const generateHTML = (recipe) => {
       <div class="subtitle">
         <h2>Temps</h2>
       </div>
-      <ul class="list unordered-list">
+      <ul class="list">
         <li class="list-item">Total: ${timing.total.quantity} ${timing.total.unit}</li>
         <li class="list-item">Préparation: ${timing.preparation.quantity} ${timing.preparation.unit}</li>
         <li class="list-item">Repos: ${timing.rest.quantity} ${timing.rest.unit}</li>
@@ -63,15 +64,18 @@ const generateHTML = (recipe) => {
   // Preparation steps
   let stepsHTML = `
       <div class="subtitle">
-        <h2>Étapes</h2>
+        <h2>Préparation</h2>
       </div>
-      <ol class="list ordered-list">`;
-  recipe.steps.forEach((step) => {
+      <div class="steps">`;
+  recipe.steps.forEach((step, index) => {
     stepsHTML += `
-        <li class="list-item">${step.description}</li>`;
+        <div class="step">
+          <div class="step-title"><strong>ÉTAPE ${index + 1}</strong></div>
+          <div class="step-description">${step.description}</div>
+        </div>`;
   });
   stepsHTML += `
-      </ol>`;
+      </div>`;
 
   return `
     ${ingredientsHTML}
