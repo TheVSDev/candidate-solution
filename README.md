@@ -29,4 +29,5 @@ That script will generate an HTML file in the same directory as `index.js`. Afte
 
 ## Remarks
 
-I didn't use Bootstrap to style the website because, personally, I prefer pure CSS because I have more control over what I want.
+- I didn't use Bootstrap to style the website because, personally, I prefer pure CSS because I have more control over what I want.
+- In case you can't run the code, inside `example/result.html` you have the example HTML file that generates when we run the `index.js`. If you ran the script successfully and a `result.html` file has successfully been generated, then disregard the `example` directory. `example` directory (and html file within it) are there just in case if you couldn't execute the code.
